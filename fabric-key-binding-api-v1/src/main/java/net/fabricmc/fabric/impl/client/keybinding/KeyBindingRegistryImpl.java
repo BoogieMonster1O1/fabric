@@ -16,14 +16,14 @@
 
 package net.fabricmc.fabric.impl.client.keybinding;
 
-import java.util.List;
 import java.util.Set;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.KeyBinding;
 
 public final class KeyBindingRegistryImpl {
@@ -66,13 +66,7 @@ public final class KeyBindingRegistryImpl {
 			addCategoryIfAbsent(binding.getCategory());
 		}
 
+		MinecraftClient.getInstance().options.keysAll = ArrayUtils.add(MinecraftClient.getInstance().options.keysAll,binding);
 		return moddedKeyBindings.add(binding) ? binding : null;
-	}
-
-	public static KeyBinding[] process(KeyBinding[] keysAll) {
-		List<KeyBinding> newKeysAll = Lists.newArrayList(keysAll);
-		newKeysAll.removeAll(moddedKeyBindings);
-		newKeysAll.addAll(moddedKeyBindings);
-		return newKeysAll.toArray(new KeyBinding[0]);
 	}
 }
