@@ -1,6 +1,6 @@
 # Fabric
 
-Essential hooks and patches for modding with Fabric.
+Essential hooks and patches for modding with Legacy Fabric.
 
 ## Getting Started
 
