@@ -16,8 +16,9 @@
 
 package net.fabricmc.fabric.api.client.keybinding.v1;
 
-import net.fabricmc.fabric.impl.client.keybinding.KeyBindingRegistryImpl;
 import net.minecraft.client.options.KeyBinding;
+
+import net.fabricmc.fabric.impl.client.keybinding.KeyBindingRegistryImpl;
 
 public final class KeyBindingHelper {
 	public static KeyBinding registerKeyBinding(KeyBinding keyBinding) {
