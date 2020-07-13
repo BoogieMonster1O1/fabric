@@ -20,15 +20,11 @@ import java.util.Set;
 
 import com.google.common.collect.Sets;
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.KeyBinding;
 
 public final class KeyBindingRegistry {
-	private static final Logger LOGGER = LogManager.getLogger();
-
 	private static final Set<KeyBinding> moddedKeyBindings = Sets.newHashSet();
 
 	private KeyBindingRegistry() {

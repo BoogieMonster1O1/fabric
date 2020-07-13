@@ -16,13 +16,13 @@ public class KeyTest implements ModInitializer {
 	public static KeyBinding FOO;
 	@Override
 	public void onInitialize() {
-		FOO = KeyBindingHelper.registerKeyBinding(new KeyBinding("nullnull", Keyboard.KEY_GRAVE, "key.categories.gameplay"));
+		FOO = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.null.grave", Keyboard.KEY_GRAVE, "key.categories.gameplay"));
 		ClientTickCallback.EVENT.register(this::run);
 	}
 
 	public void run(MinecraftClient client) {
 		if(FOO.isPressed()){
-			System.err.println("OOPS I CLICKED IT");
+			System.err.println("pressed");
 		}
 	}
 }
