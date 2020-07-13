@@ -26,12 +26,12 @@ import org.apache.logging.log4j.Logger;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.KeyBinding;
 
-public final class KeyBindingRegistryImpl {
+public final class KeyBindingRegistry {
 	private static final Logger LOGGER = LogManager.getLogger();
 
 	private static final Set<KeyBinding> moddedKeyBindings = Sets.newHashSet();
 
-	private KeyBindingRegistryImpl() {
+	private KeyBindingRegistry() {
 	}
 
 	private static Set<String> getCategorySet() {
