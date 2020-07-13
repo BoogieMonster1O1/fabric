@@ -9,8 +9,8 @@ public class TriMap<K, L, R> {
 
 	private final Set<Entry<K, L, R>> entries = Sets.newHashSet();
 
-	private void addEntry(K key, L left, R right) {
-		this.entries.add(new Entry<>(key, left, right));
+	private void addEntry(Entry<K, L, R> entry) {
+		this.entries.add(entry);
 	}
 
 	public void add(K key, L left, R right) {
@@ -19,7 +19,7 @@ public class TriMap<K, L, R> {
 				return;
 			}
 		}
-		this.addEntry(key, left, right);
+		this.addEntry(new Entry<>(key, left, right));
 	}
 
 	public void remove(K key){

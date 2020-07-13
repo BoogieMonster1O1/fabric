@@ -1,20 +1,16 @@
 package net.fabricmc.fabric.impl.content.registries;
 
-import java.util.Map;
-
-import com.google.common.collect.Maps;
-
 import net.minecraft.block.Block;
-import net.minecraft.util.Pair;
 
 import net.fabricmc.fabric.api.content.registry.v1.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.util.TriMap;
 
 public class FlammableBlockRegistryImpl implements FlammableBlockRegistry {
 
-	public static final Map<String, Pair<Integer, Integer>> FLAMMABLE_BLOCKS = Maps.newHashMap();
+	public static final TriMap<Block, Integer, Integer> FLAMMABLE_BLOCKS = new TriMap<>();
 
 	@Override
 	public void register(int flammability, Block block, int disappearancePercent) {
-
+		FLAMMABLE_BLOCKS.add(block, flammability, disappearancePercent);
 	}
 }

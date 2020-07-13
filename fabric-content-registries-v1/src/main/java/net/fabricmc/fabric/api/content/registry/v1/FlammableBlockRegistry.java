@@ -3,6 +3,7 @@ package net.fabricmc.fabric.api.content.registry.v1;
 import net.minecraft.block.Block;
 
 public interface FlammableBlockRegistry {
+
 	void register(int flammability, Block block, int disappearancePercent);
 
 	default void register(int flammability, Block block){

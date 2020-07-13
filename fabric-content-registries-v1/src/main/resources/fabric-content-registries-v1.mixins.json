@@ -5,6 +5,7 @@
   "mixins": [
     "BlockAccessor",
     "ItemAccessor",
+    "MixinFireBlock",
     "MixinFurnaceBlockEntity",
     "MixinWorld",
     "MutableRegistryAccessor",
