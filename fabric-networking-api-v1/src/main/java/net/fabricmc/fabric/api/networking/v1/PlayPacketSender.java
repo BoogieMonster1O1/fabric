@@ -16,14 +16,18 @@
 
 package net.fabricmc.fabric.api.networking.v1;
 
+import java.util.Collection;
+
+import net.minecraft.util.Identifier;
 import net.minecraft.util.PacketByteBuf;
 
-@FunctionalInterface
-public interface ChannelHandler<C extends ListenerContext> {
-	void receive(C context, PacketByteBuf buf);
+public interface PlayPacketSender extends PacketSender, ChannelAware{
+	@Override
+	void sendPacket(Identifier channel, PacketByteBuf buf);
 
-	@SuppressWarnings("unchecked")
-	default <E extends Throwable> void rethrow(Throwable ex) throws E {
-		throw (E) ex;
-	}
+	@Override
+	Collection<Identifier> getChannels();
+
+	@Override
+	boolean hasChannel(Identifier channel);
 }
