@@ -25,6 +25,7 @@ import net.minecraft.command.AbstractCommand;
 import net.fabricmc.fabric.api.registry.FabricCommandRegistry;
 
 public class FabricCommandRegistryImpl implements FabricCommandRegistry {
+	public static final FabricCommandRegistryImpl INSTANCE = new FabricCommandRegistryImpl();
 	private static final Map<AbstractCommand, CommandSide> FABRIC_COMMANDS = Maps.newHashMap();
 
 	@Override

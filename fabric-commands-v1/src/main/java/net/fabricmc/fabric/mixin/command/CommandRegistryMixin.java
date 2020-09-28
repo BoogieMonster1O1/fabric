@@ -42,7 +42,7 @@ import net.fabricmc.fabric.api.command.v1.ServerCommandSource;
 import net.fabricmc.fabric.impl.command.CommandManagerHolder;
 
 @Mixin(CommandRegistry.class)
-public class MixinCommandRegistry {
+public class CommandRegistryMixin {
 	@Inject(method = "execute", at = @At("HEAD"), cancellable = true)
 	private void execute(CommandSource source, String command, CallbackInfoReturnable<Integer> info) {
 		CommandDispatcher<ServerCommandSource> dispatcher = CommandManagerHolder.COMMAND_DISPATCHER;

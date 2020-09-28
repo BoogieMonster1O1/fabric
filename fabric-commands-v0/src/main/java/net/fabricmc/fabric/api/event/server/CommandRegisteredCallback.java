@@ -16,21 +16,20 @@
 
 package net.fabricmc.fabric.api.event.server;
 
-import net.minecraft.command.AbstractCommand;
+import net.minecraft.command.Command;
 import net.minecraft.server.MinecraftServer;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
-import net.fabricmc.fabric.impl.command.CommandSide;
 
-public interface FabricCommandRegisteredCallback {
-	Event<FabricCommandRegisteredCallback> EVENT = EventFactory.createArrayBacked(FabricCommandRegisteredCallback.class,
-			(listeners) -> (server, command, side) -> {
-				for (FabricCommandRegisteredCallback event : listeners) {
-					event.onCommandRegistered(server, command, side);
+public interface CommandRegisteredCallback {
+	Event<CommandRegisteredCallback> EVENT = EventFactory.createArrayBacked(CommandRegisteredCallback.class,
+			(listeners) -> (server, command) -> {
+				for (CommandRegisteredCallback event : listeners) {
+					event.onCommandRegistered(server, command);
 				}
 			}
 	);
 
-	void onCommandRegistered(MinecraftServer server, AbstractCommand command, CommandSide side);
+	void onCommandRegistered(MinecraftServer server, Command command);
 }

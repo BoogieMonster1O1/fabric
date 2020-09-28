@@ -22,7 +22,7 @@ import net.fabricmc.fabric.impl.command.FabricCommandRegistryImpl;
 import net.fabricmc.fabric.impl.command.CommandSide;
 
 public interface FabricCommandRegistry {
-	FabricCommandRegistry INSTANCE = new FabricCommandRegistryImpl();
+	FabricCommandRegistry INSTANCE = FabricCommandRegistryImpl.INSTANCE;
 
 	void register(AbstractCommand command, CommandSide side);
 

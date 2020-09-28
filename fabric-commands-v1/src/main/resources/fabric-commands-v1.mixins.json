@@ -3,8 +3,8 @@
   "package": "net.fabricmc.fabric.mixin.command",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinCommandManager",
-    "MixinCommandRegistry"
+    "CommandManagerMixin",
+    "CommandRegistryMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -30,10 +30,10 @@ public enum CommandSide {
 	}
 
 	public boolean isDedicated() {
-		return dedicated;
+		return this.dedicated;
 	}
 
 	public boolean isIntegrated() {
-		return integrated;
+		return this.integrated;
 	}
 }
